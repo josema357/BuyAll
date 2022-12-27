@@ -3,27 +3,43 @@ const desktopMenu=document.querySelector(".desktop-menu")
 const menuHamIcon=document.querySelector(".menu");
 const mobileMenu=document.querySelector(".mobile-menu");
 const menuCartIcon=document.querySelector(".navbar-shopping-cart");
-const aside=document.querySelector(".product-detail");
+const shoppingCartContainer=document.querySelector("#shoppingCartContainer");
 const cardsContainer=document.querySelector(".cards-container");
+const productDetail=document.querySelector("#productDetail");
+const productDetailClose=document.querySelector(".product-detail-close")
 
 menuEmail.addEventListener("click",toggleDesktopMenu);
 menuHamIcon.addEventListener("click",toggleMobileMenu);
 menuCartIcon.addEventListener("click",toggleCarritoAside);
+productDetailClose.addEventListener("click",closeProductDetail);
 
 function toggleDesktopMenu(){
     desktopMenu.classList.toggle("inactive");
-    aside.classList.add("inactive");
+    shoppingCartContainer.classList.add("inactive");
+    productDetail.classList.add("inactive");
 }
 
 function toggleMobileMenu(){
     mobileMenu.classList.toggle("inactive");
-    aside.classList.add("inactive");
+    shoppingCartContainer.classList.add("inactive");
+    productDetail.classList.add("inactive");
 }
 
 function toggleCarritoAside(){
     mobileMenu.classList.add("inactive");
     desktopMenu.classList.add("inactive");
-    aside.classList.toggle("inactive");
+    productDetail.classList.add("inactive");
+    shoppingCartContainer.classList.toggle("inactive");
+}
+
+function openProductDetail(){
+    productDetail.classList.remove("inactive")
+    shoppingCartContainer.classList.add("inactive");
+    desktopMenu.classList.add("inactive");
+}
+
+function closeProductDetail(){
+    productDetail.classList.add("inactive")
 }
 
 const productList=[
@@ -46,6 +62,46 @@ const productList=[
         name: "Mouse",
         price: 200.00,
         img: "./images/laptop.jpg"
+    },
+    {
+        name: "Mouse",
+        price: 200.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Mouse",
+        price: 200.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Mouse",
+        price: 200.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Mouse",
+        price: 200.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Monitor",
+        price: 1000.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Monitor",
+        price: 1000.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Monitor",
+        price: 1000.00,
+        img: "./images/laptop.jpg"
+    },
+    {
+        name: "Monitor",
+        price: 1000.00,
+        img: "./images/laptop.jpg"
     }
 ];
 
@@ -57,6 +113,7 @@ function renderProducts(arr){
     
         const img=document.createElement("img");
         img.setAttribute("src",product.img);
+        img.addEventListener("click",openProductDetail);
     
         const productInfo=document.createElement('div');
         productInfo.classList.add('product-info');
