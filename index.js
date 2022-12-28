@@ -7,11 +7,13 @@ const shoppingCartContainer=document.querySelector("#shoppingCartContainer");
 const cardsContainer=document.querySelector(".cards-container");
 const productDetail=document.querySelector("#productDetail");
 const productDetailClose=document.querySelector(".product-detail-close")
+const flechitaShoppCart=document.querySelector(".title-container img");
 
 menuEmail.addEventListener("click",toggleDesktopMenu);
 menuHamIcon.addEventListener("click",toggleMobileMenu);
 menuCartIcon.addEventListener("click",toggleCarritoAside);
 productDetailClose.addEventListener("click",closeProductDetail);
+flechitaShoppCart.addEventListener("click",toggleCarritoAside)
 
 function toggleDesktopMenu(){
     desktopMenu.classList.toggle("inactive");

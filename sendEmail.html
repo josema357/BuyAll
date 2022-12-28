@@ -25,5 +25,13 @@
             </p>
         </div>
     </div>
+    <script>
+        const goToLogin=document.querySelector(".login-button");
+        goToLogin.addEventListener("click",linkToLogin);
+        function linkToLogin(e){
+            e.preventDefault();
+            location.href="./loginPage.html";
+        }
+    </script>
 </body>
 </html>

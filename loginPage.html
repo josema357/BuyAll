@@ -20,10 +20,18 @@
                 <label for="password" class="label">Password</label>
                 <input type="password" id="password" placeholder="**********" class="input input-pass">
                 <input type="submit" value="Log in" class="primary-button login-button">
-                <a href="">Forgot my password</a>
+                <a href="./newPassword.html">Forgot my password</a>
             </form>
             <button class="secondary-button signup-button">Sign Up</button>
         </div>
     </div>
+    <script>
+        const goToHome=document.querySelector(".login-button");
+        goToHome.addEventListener("click",linkToHome);
+        function linkToHome(e){
+            e.preventDefault();
+            location.href="./index.html";
+        }
+    </script>
 </body>
 </html>
