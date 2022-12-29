@@ -32,5 +32,5 @@ function toggleCarritoAside(){
 }
 
 function linkTo(){
-    location.href="./myOrder.html"
+    location.href="./myorder.html"
 }
