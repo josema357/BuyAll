@@ -136,7 +136,7 @@ nav{
 /******************************Mobile-Menu****************************************/
 .mobile-menu{
     background-color: var(--white);
-    padding: 24px;
+    padding: 0 24px 24px;
     left: 0;
     width: 100%;
     display: flex;
@@ -376,6 +376,7 @@ aside{
     height: calc(100vh - 61px);
     display: grid;
     place-items: center;
+    box-sizing: border-box;
 }
 .form-container{
     display: grid;
